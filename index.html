@@ -3,8 +3,220 @@
   <head>
     <meta charset="utf-8">
     <title>Pizza Delivery!</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   </head>
   <body>
 
+    <!-- Jumbotron -->
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container-top">
+        <h1 class="display-4">Charles' Pizza</h1>
+        <p class="lead">Create Your Own Pizza!</p>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <!-- 1st row -->
+      <div class="row">
+        <!-- Pizza size -->
+        <div class="col">
+          <form>
+            <div class="header">
+              <span>Sizes</span>
+            </div>
+            <input type="radio" name="size" value="personal" checked="checked"> Personal Pizza<br>
+            <input type="radio" name="size" value="medium"> Medium Pizza<br>
+            <input type="radio" name="size" value="large"> Large Pizza<br>
+            <input type="radio" name="size" value="extralarge"> Extra Large Pizza<br>
+          </form>
+        </div>
+        <!-- Meats selections -->
+        <div class="col">
+          <form>
+            <div class="header">
+              <span>Meats</span>
+            </div>
+            <label class="container">
+              <input type="checkbox" checked="checked">
+              <span class="checkmark">Pepperoni</span>
+            </label>
+
+            <label class="container">
+              <input type="checkbox">
+              <span class="checkmark">Sausage</span>
+            </label>
+
+            <label class="container">
+              <input type="checkbox">
+              <span class="checkmark">Canadian Bacon</span>
+            </label>
+
+            <label class="container">
+              <input type="checkbox">
+              <span class="checkmark">Ground Beef</span>
+            </label>
+
+            <label class="container">
+              <input type="checkbox">
+              <span class="checkmark">Anchovy</span>
+            </label>
+
+            <label class="container">
+              <input type="checkbox">
+              <span class="checkmark">Chicken</span>
+            </label>
+          </form>
+        </div>
+        <!-- Cheese selections -->
+        <div class="col">
+          <form>
+            <div class="header">
+              <span>Cheese</span>
+            </div>
+            <input type="radio" name="cheese" value="nocheese" checked="checked"> No Cheese<br>
+            <input type="radio" name="cheese" value="regularcheese"> Regular Cheese<br>
+            <input type="radio" name="cheese" value="extracheese"> Extra Cheese<br>
+          </form>
+        </div>
+      </div>
+      <!-- /1st row -->
+
+      <!-- 2nd row -->
+      <div class="row">
+        <!-- Crust selections -->
+        <div class="col">
+          <form>
+            <div class="header">
+              <span>Crust</span>
+            </div>
+            <input type="radio" name="crust" value="plaincrust" checked="checked"> Plain Crust<br>
+            <input type="radio" name="crust" value="garlicbutter"> Garlic Butter Crust<br>
+            <input type="radio" name="crust" value="cheesestuffed"> Cheese Stuffed Crust<br>
+            <input type="radio" name="crust" value="spicycrust"> Spicy Crust<br>
+            <input type="radio" name="crust" value="housespecial"> House Special Crust<br>
+          </form>
+        </div>
+        <!-- Sauce selections -->
+        <div class="col">
+          <form>
+            <div class="header">
+              <span>Sauces</span>
+            </div>
+            <input type="radio" name="sauce" value="nosauce" checked="checked"> No Sauce<br>
+            <input type="radio" name="sauce" value="marinara"> Marinara Sauce<br>
+            <input type="radio" name="sauce" value="white"> White Sauce<br>
+            <input type="radio" name="sauce" value="barbeque"> Barbeque Sauce<br>
+          </form>
+        </div>
+        <!-- Veggies selections -->
+        <div class="col">
+          <form>
+            <div class="header">
+              <span>Vegetables</span>
+            </div>
+            <label class="container">
+              <input type="checkbox" checked="checked">
+              <span class="checkmark">Tomatoes</span>
+            </label>
+
+            <label class="container">
+              <input type="checkbox">
+              <span class="checkmark">Onions</span>
+            </label>
+
+            <label class="container">
+              <input type="checkbox">
+              <span class="checkmark">Green Peppers</span>
+            </label>
+
+            <label class="container">
+              <input type="checkbox">
+              <span class="checkmark">Mushrooms</span>
+            </label>
+
+            <label class="container">
+              <input type="checkbox">
+              <span class="checkmark">Pineapple</span>
+            </label>
+
+            <label class="container">
+              <input type="checkbox">
+              <span class="checkmark">Spinach</span>
+            </label>
+
+            <label class="container">
+              <input type="checkbox">
+              <span class="checkmark">Jalapeno</span>
+            </label>
+          </form>
+        </div>
+
+      </div>
+    </div>
+    <!-- /2nd row -->
+
+    <!-- Table Price -->
+    <div class="table">
+      <table class="table-sm">
+        <thead>
+          <tr>
+            <th scope="col">Your Order</th>
+            <th scope="col">Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td value="sizes"></td>
+            <td value="price"></td>
+          </tr>
+          <tr>
+            <td value="meats"></td>
+            <td value="price"></td>
+          </tr>
+          <tr>
+            <td value="cheese"></td>
+            <td value="price"></td>
+          </tr>
+          <tr>
+            <td value="crust"></td>
+            <td value="price"></td>
+          </tr>
+          <tr>
+            <td value="sauce"></td>
+            <td value="price"></td>
+          </tr>
+          <tr>
+            <td value="veggies"></td>
+            <td value="price"></td>
+          </tr>
+          <tr>
+            <td><strong>TOTAL PRICE:</strong></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <!-- /Table Price -->
+
+    <!-- Order placed buttons -->
+    <div class="order">
+      <div class="row">
+        <div class="col">
+          <button type="button" name="placeorder" class="btn btn-secondary btn-lg">Place Order</button>
+          <button type="button" name="cancel" class="btn btn-secondary btn-lg">Cancel</button>
+        </div>
+      </div>
+    </div>
+    <!-- /Order placed buttons -->
+
+    <!-- footer -->
+    <footer class="footer">
+      <div class="container">
+        <p><small>&copy;2018 Charles' Pizza</small></p>
+      </div>
+    </footer>
+    <!-- /footer -->
   </body>
+  <script scr="./js/calc.js"></script>
 </html>

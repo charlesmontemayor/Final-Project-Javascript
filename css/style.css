@@ -1,0 +1,25 @@
+.container-top {
+  text-align: center;
+}
+
+.table {
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.order {
+  text-align: center;
+  max-width: 300px;
+  max-height: 200px;
+  margin: auto;
+}
+
+.footer {
+  text-align: right;
+}
+
+.header {
+  text-align: center;
+  font-weight: bold;
+}
