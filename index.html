@@ -50,7 +50,7 @@
             </label>
 
             <label class="container">
-              <input class="meats" type="checkbox" name="Meat" value="Ground Beef"> Ground Beef
+              <input class="meat" type="checkbox" name="Meat" value="Ground Beef"> Ground Beef
             </label>
 
             <label class="container">
@@ -154,27 +154,27 @@
         </thead>
         <tbody>
           <tr>
-            <td value="sizes"></td>
+            <td id="sizeSelection" value="sizes"></td>
             <td value="price"></td>
           </tr>
           <tr>
-            <td value="meats"></td>
+            <td id="meatSelection" value="meats"></td>
             <td value="price"></td>
           </tr>
           <tr>
-            <td value="cheese"></td>
+            <td id="cheeseSelection" value="cheese"></td>
             <td value="price"></td>
           </tr>
           <tr>
-            <td value="crust"></td>
+            <td id="crustSelection" value="crust"></td>
             <td value="price"></td>
           </tr>
           <tr>
-            <td value="sauce"></td>
+            <td id="sauceSelection" value="sauce"></td>
             <td value="price"></td>
           </tr>
           <tr>
-            <td value="veggies"></td>
+            <td id="veggiesSelection" value="veggies"></td>
             <td value="price"></td>
           </tr>
           <tr>
@@ -190,8 +190,8 @@
     <div class="order">
       <div class="row">
         <div class="col">
-          <button id="buttonOrder" type="button" class="btn btn-secondary btn-lg" onclick="placeOrder()">Place Order</button>
-          <button id="cancelOrder" type="button" class="btn btn-secondary btn-lg" onclick="cancelOrder()">Cancel</button>
+          <button type="button" class="btn btn-secondary btn-lg" onclick="getReceipt()" value="Place Order">Place Order</button>
+          <button type="button" class="btn btn-secondary btn-lg">Cancel</button>
         </div>
       </div>
     </div>
@@ -204,6 +204,8 @@
       </div>
     </footer>
     <!-- /footer -->
+
+  <script src="./js/calc.js"></script>
+
   </body>
-  <script scr="./js/calc.js"></script>
 </html>
