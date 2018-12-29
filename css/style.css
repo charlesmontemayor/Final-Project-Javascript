@@ -23,3 +23,17 @@
   text-align: center;
   font-weight: bold;
 }
+
+.table-container {
+  margin: center;
+  max-width: auto;
+  max-height: auto;
+}
+
+.table {
+  margin: center;
+}
+
+.order {
+  margin: center;
+}

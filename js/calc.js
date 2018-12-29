@@ -1,12 +1,11 @@
 function getReceipt() {
-  var text1 = "Your Order: ";
   var runningTotal = 0;
   var sizeTotal = 0;
   var sizeArray = document.getElementsByClassName('size');
   for (var i = 0; i < sizeArray.length; i++) {
     if (sizeArray[i].checked) {
       var selectedSize = sizeArray[i].value;
-      text1 = text1+selectedSize+"<br>";
+      document.getElementById('sizeSelection').innerHTML = selectedSize;
     }
   }
   if (selectedSize === "Personal Pizza") {
@@ -18,14 +17,12 @@ function getReceipt() {
   } else if (selectedSize === "Extra Large Pizza") {
     sizeTotal = 16;
   }
+  document.getElementById('sizePrice').innerHTML = "$ "+[sizeTotal]+".00";
   runningTotal = sizeTotal;
-  console.log(selectedSize+" = $"+sizeTotal+".00");
-  console.log("size text1: "+text1);
-  console.log("subtotal: "+runningTotal+".00");
-  getMeat(runningTotal,text1);
+  getMeat(runningTotal);
 }
 
-function getMeat(runningTotal,text1) {
+function getMeat(runningTotal) {
   var meatTotal = 0;
   var selectedMeat = [];
   var meatArray = document.getElementsByClassName('meat');
@@ -33,7 +30,7 @@ function getMeat(runningTotal,text1) {
     if (meatArray[j].checked) {
       selectedMeat.push(meatArray[j].value);
       console.log("selected meat item: ("+meatArray[j].value+")");
-      text1 = text1+meatArray[j].value+"<br>";
+      document.getElementById('meatSelection').innerHTML = selectedMeat;
     }
   }
   var meatCount = selectedMeat.length;
@@ -42,21 +39,18 @@ function getMeat(runningTotal,text1) {
   } else {
     meatTotal = 0;
   }
+  document.getElementById('meatPrice').innerHTML = "$ "+[meatTotal]+".00";
   runningTotal = (runningTotal + meatTotal);
-  console.log("total selected meat items: "+meatCount);
-  console.log(meatCount+" meat - 1 free meat = "+"$"+meatTotal+".00");
-  console.log("meat text1: "+text1);
-  console.log("subtotal: "+"$"+runningTotal+".00");
-  getCheese(runningTotal,text1);
+  getCheese(runningTotal);
 }
 
-function getCheese(runningTotal,text1) {
+function getCheese(runningTotal) {
   var cheeseTotal = 0;
   var cheeseArray = document.getElementsByClassName('cheese');
   for (var k = 0; k < cheeseArray.length; k++) {
     if (cheeseArray[k].checked) {
       var selectedCheese = cheeseArray[k].value;
-      text1 = text1+selectedCheese+"<br>";
+      document.getElementById('cheeseSelection').innerHTML = selectedCheese;
     }
   }
   if (selectedCheese === "No Cheese") {
@@ -66,20 +60,18 @@ function getCheese(runningTotal,text1) {
   } else if (selectedCheese === "Extra Cheese") {
     cheeseTotal = 3;
   }
+  document.getElementById('cheesePrice').innerHTML = "$ "+[cheeseTotal]+".00";
   runningTotal = (runningTotal + cheeseTotal);
-  console.log(selectedCheese+" = "+cheeseTotal+".00");
-  console.log("cheese text1: "+text1);
-  console.log("subtotal: "+runningTotal+".00");
-  getCrust(runningTotal,text1);
+  getCrust(runningTotal);
 }
 
-function getCrust(runningTotal,text1) {
+function getCrust(runningTotal) {
   var crustTotal = 0;
   var crustArray = document.getElementsByClassName('crust');
   for (var l = 0; l < crustArray.length; l++) {
     if (crustArray[l].checked) {
       var selectedCrust = crustArray[l].value;
-      text1 = text1+selectedCrust+"<br>";
+      document.getElementById('crustSelection').innerHTML = selectedCrust;
     }
   }
   if (selectedCrust === "Plain Crust") {
@@ -92,39 +84,34 @@ function getCrust(runningTotal,text1) {
     crustTotal = 0;
   } else if (selectedCrust === "House Special Crust") {
     crustTotal = 0;
-  };
+  }
+  document.getElementById('crustPrice').innerHTML = "$ "+[crustTotal]+".00";
   runningTotal = (runningTotal + crustTotal)
-  console.log(selectedCrust+" = "+crustTotal+".00");
-  console.log("crust text1: "+text1);
-  console.log("subtotal: "+runningTotal+".00");
-  getSauce(runningTotal,text1);
+  getSauce(runningTotal);
 }
 
-function getSauce(runningTotal,text1) {
+function getSauce(runningTotal) {
   var sauceTotal = 0;
   var sauceArray = document.getElementsByClassName('sauce');
   for (var m = 0; m < sauceArray.length; m++) {
     if (sauceArray[m].checked) {
       var selectedSauce = sauceArray[m].value;
-      text1 = text1+selectedSauce+"<br>";
+      document.getElementById('sauceSelection').innerHTML = selectedSauce;
     }
   }
+  document.getElementById('saucePrice').innerHTML = "$ "+[sauceTotal]+".00";
   runningTotal = (runningTotal + sauceTotal)
-  console.log(selectedSauce+" = "+sauceTotal+".00");
-  console.log("sauce text1 ="+text1);
-  console.log("subtotal: "+runningTotal+".00");
-  getVeggies(runningTotal,text1);
+  getVeggies(runningTotal);
 }
 
-function getVeggies(runningTotal,text1) {
+function getVeggies(runningTotal) {
   var veggiesTotal = 0;
   var selectedVeggies = [];
   var veggiesArray = document.getElementsByClassName('vegetables');
   for (var n = 0; n < veggiesArray.length; n++) {
     if (veggiesArray[n].checked) {
       selectedVeggies.push(veggiesArray[n].value);
-      console.log("selected vegetables: ("+veggiesArray[n].value+")");
-      text1 = text1+veggiesArray[n].value+"<br>";
+      document.getElementById('veggiesSelection').innerHTML = selectedVeggies;
     }
   }
   var veggiesCount = selectedVeggies.length;
@@ -133,9 +120,12 @@ function getVeggies(runningTotal,text1) {
   } else {
     veggiesTotal = 0;
   }
+  document.getElementById('veggiesPrice').innerHTML = "$ "+[veggiesTotal]+".00";
   runningTotal = (runningTotal + veggiesTotal);
-  console.log("total selected vegetables: "+veggiesCount);
-  console.log(veggiesCount+" veggies - 1 free veggies ="+"&"+veggiesTotal+".00");
-  console.log("veggies text1: "+text1);
-  console.log("subtotal: "+"$"+runningTotal+".00");
+  getTotal(runningTotal);
+}
+
+function getTotal(runningTotal) {
+  var showTotal = runningTotal;
+  document.getElementById('showTotal').innerHTML = "$ "+[showTotal]+".00";
 }
